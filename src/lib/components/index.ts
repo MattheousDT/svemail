@@ -1,24 +1,51 @@
-export { default as MjAccordion } from "./mj_accordion.svelte";
-export { default as MjAccordionElement } from "./mj_accordion_element.svelte";
-export { default as MjAccordionText } from "./mj_accordion_text.svelte";
-export { default as MjAccordionTitle } from "./mj_accordion_title.svelte";
-export { default as MjAttributes } from "./mj_attributes.svelte";
-export { default as MjButton } from "./mj_button.svelte";
-export { default as MjCarousel } from "./mj_carousel.svelte";
-export { default as MjCarouselImage } from "./mj_carousel_image.svelte";
-export { default as MjColumn } from "./mj_column.svelte";
-export { default as MjDivider } from "./mj_divider.svelte";
-export { default as MjGroup } from "./mj_group.svelte";
-export { default as MjHead } from "./mj_head.svelte";
-export { default as MjHero } from "./mj_hero.svelte";
-export { default as MjImage } from "./mj_image.svelte";
-export { default as MjNavbar } from "./mj_navbar.svelte";
-export { default as MjNavbarLink } from "./mj_navbar_link.svelte";
-export { default as MjRaw } from "./mj_raw.svelte";
-export { default as MjSection } from "./mj_section.svelte";
-export { default as MjSocial } from "./mj_social.svelte";
-export { default as MjSocialElement } from "./mj_social_element.svelte";
-export { default as MjSpacer } from "./mj_spacer.svelte";
-export { default as MjTable } from "./mj_table.svelte";
-export { default as MjText } from "./mj_text.svelte";
-export { default as MjWrapper } from "./mj_wrapper.svelte";
+import Accordion from "./accordion.svelte";
+import AccordionElement from "./accordion_element.svelte";
+import AccordionText from "./accordion_text.svelte";
+import AccordionTitle from "./accordion_title.svelte";
+import Attributes from "./attributes.svelte";
+import Button from "./button.svelte";
+import Carousel from "./carousel.svelte";
+import CarouselImage from "./carousel_image.svelte";
+import Column from "./column.svelte";
+import Divider from "./divider.svelte";
+import Group from "./group.svelte";
+import Head from "./head.svelte";
+import Hero from "./hero.svelte";
+import Image from "./image.svelte";
+import Navbar from "./navbar.svelte";
+import NavbarLink from "./navbar_link.svelte";
+import Raw from "./raw.svelte";
+import Section from "./section.svelte";
+import Social from "./social.svelte";
+import SocialElement from "./social_element.svelte";
+import Spacer from "./spacer.svelte";
+import Table from "./table.svelte";
+import Text from "./text.svelte";
+import Wrapper from "./wrapper.svelte";
+
+export default {
+  Accordion,
+  AccordionElement,
+  AccordionText,
+  AccordionTitle,
+  Attributes,
+  Button,
+  Carousel,
+  CarouselImage,
+  Column,
+  Divider,
+  Group,
+  Head,
+  Hero,
+  Image,
+  Navbar,
+  NavbarLink,
+  Raw,
+  Section,
+  Social,
+  SocialElement,
+  Spacer,
+  Table,
+  Text,
+  Wrapper,
+}

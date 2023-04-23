@@ -1,38 +1,91 @@
-# create-svelte
+# 🧡📧 svemail
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Create and render email templates using the power of Svelte.
 
-## Creating a project
+This library is effectively a wrapper around [MJML](https://mjml.io/) but with type-safety and svelte as a renderer in order to leverage props, js-in-html, shared components, etc.
 
-If you're seeing this, you've probably already done this step. Congrats!
+When paired with SvelteKit, you very quickly have your very own email-on-demand service that you can deploy anywhere
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## 🚧 Work in progress
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+This library is very much a work-in-progress and may be subject to API changes.
 
-## Developing
+## Getting started
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Installing
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install -D svemail
 ```
 
-## Building
+or alternatively use pnpm or yarn.
 
-To create a production version of your app:
+### Example
 
-```bash
-npm run build
+Svemail can be used as simple as:
+
+> my_component.svelte
+
+```svelte
+<script>
+	// We import from svemail/components in order to leverage more effective code splitting
+	import Svemail from "svemail/components";
+
+	export let name = "World";
+</script>
+
+<Svemail.Section>
+	<Svemail.Column>
+		<!-- These props are type checked 😱 -->
+		<Svemail.Text font-style="bold" font-size="20px" color="#626262">
+			Hello, {name}!
+		</Svemail.Text>
+	</Svemail.Column>
+</Svemail.Section>
 ```
 
-You can preview the production build with `npm run preview`.
+> index.js
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```js
+import { render } from "svemail";
+import MyComponent from "./my_component.svelte";
+
+const html = render(MyComponent, {
+	// These props are also type checked 😎
+	name: "World",
+});
+
+console.log(html);
+```
+
+You can pair this with SvelteKit in order to add api routes that dynamically render templates based on query strings or body params.
+[You can view some more advanced examples here](src/routes/examples)
+
+## Contributing
+
+First off, thanks for taking the time to contribute! Contributions are what makes the open-source community such an amazing place to learn, inspire, and create. Any contributions you make will benefit everybody else and are **greatly appreciated**.
+
+Please try to create bug reports that are:
+
+- _Reproducible._ Include steps to reproduce the problem.
+- _Specific._ Include as much detail as possible: which version, what environment, etc.
+- _Unique._ Do not duplicate existing opened issues.
+- _Scoped to a Single Bug._ One bug per report.
+
+Please adhere to this project's [code of conduct](CODE_OF_CONDUCT.md).
+
+You can use [markdownlint-cli](https://github.com/igorshubovych/markdownlint-cli) to check for common markdown style inconsistency.
+
+## License
+
+This project is licensed under the **MIT license**. Feel free to edit and distribute as you like.
+
+See [LICENSE](LICENSE) for more information.
+
+## Acknowledgements
+
+Thanks for these awesome resources that were used during the development of the **svemail**:
+
+- [Gautier Ben Aïm](https://escape.tech/blog/sveltemails) for the inspiration and initial rendering code for this project
+- [MJML](https://mjml.io) for existing
+- [SvelteKit](https://kit.svelte.dev)
