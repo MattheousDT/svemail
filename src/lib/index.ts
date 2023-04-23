@@ -1,4 +1,5 @@
 import mjml2html from "mjml";
+import Components from "./components"
 import type { SvelteComponentTyped } from "svelte";
 import type { create_ssr_component } from "svelte/internal";
 
@@ -32,3 +33,5 @@ export const render = <Props extends Record<string, any>>(
 
 	return html;
 };
+
+export default Components

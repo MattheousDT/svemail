@@ -1,15 +1,18 @@
 {
 	"name": "svemail",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"files": ["dist"],
+	"main": "./dist/index.js",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
+			"svelte": "./dist/index.js",
+			"default": "./dist/index.js"
 		},
 		"./components": {
-			"types": "./dist/components/index.d.ts",
-			"svelte": "./dist/components/index.js"
+			"types": "./dist/components.d.ts",
+			"svelte": "./dist/components.js",
+			"default": "./dist/components.js"
 		}
 	},
 	"scripts": {
