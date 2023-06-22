@@ -1,18 +1,15 @@
 {
 	"name": "svemail",
-	"version": "0.0.2",
-	"files": ["dist"],
+	"version": "0.0.3",
+	"files": [
+		"dist"
+	],
 	"main": "./dist/index.js",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js",
 			"default": "./dist/index.js"
-		},
-		"./components": {
-			"types": "./dist/components.d.ts",
-			"svelte": "./dist/components.js",
-			"default": "./dist/components.js"
 		}
 	},
 	"scripts": {
@@ -26,21 +23,21 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.15.7",
+		"@sveltejs/kit": "^1.20.4",
 		"@sveltejs/package": "^2.0.2",
 		"@types/mjml": "^4.7.1",
 		"csstype": "^3.1.2",
 		"prettier": "^2.8.8",
-		"prettier-plugin-svelte": "^2.10.0",
-		"svelte-check": "^3.2.0",
+		"prettier-plugin-svelte": "^2.10.1",
+		"svelte-check": "^3.4.3",
 		"tslib": "^2.5.0",
-		"typescript": "^5.0.4",
+		"typescript": "^5.0.0",
 		"vite": "^4.3.1",
 		"vitest": "^0.30.1"
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte": "^3.58.0",
+		"svelte": "^4.0.0",
 		"mjml": "^4.14.1"
 	}
 }

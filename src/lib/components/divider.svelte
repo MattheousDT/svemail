@@ -1,6 +1,5 @@
 <script lang="ts">
-	import type { Ephemeral, Matrix, Percentage, Pixel } from "$lib/utils/types";
-	import type { Property } from "csstype";
+	import type { Matrix, Percentage, Pixel } from "$lib/utils/types";
 
 	type $$Props = {
 		[x: string]: any;
