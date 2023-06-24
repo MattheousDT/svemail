@@ -1,5 +1,5 @@
 import mjml2html from "mjml";
-import type { SvelteComponent } from "svelte";
+import type { ComponentProps, SvelteComponent } from "svelte";
 
 /**
  * Removes classes added to elements by the Svelte compiler because MJML does
@@ -8,12 +8,12 @@ import type { SvelteComponent } from "svelte";
 const stripSvelteClasses = (html: string) => html.replaceAll(/class="s-\w+"/g, "");
 
 /** Renders a Svelte component as email-ready HTML. */
-export const render = <Props extends Record<string, any>>(
-	component: SvelteComponent<Props>,
-	props: Props
+export const render = <Component extends SvelteComponent>(
+	component: new (...args: any[]) => Component,
+	props: ComponentProps<Component>
 ) => {
 	// Render the component to MJML
-	const { html: body, css, head } = component.render(props);
+	const { html: body, css, head } = (component as unknown as Component).render(props);
 
 	const mjml = `<mjml>
         <mj-head>
